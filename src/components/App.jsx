@@ -15,6 +15,12 @@ export class App extends Component{
     positiveFeedbackPercentage: '',
   }
 
+  feedbackOptions = {
+    good: "good",
+    neutral: "neutral",
+    bad: "bad"
+  }
+
   addFeedback = (el) => {
     const feedbackName = el.target.dataset.feedbackName;
 
@@ -48,7 +54,7 @@ export class App extends Component{
     return (
       <AppWrapper>
         <Section title="Please leave feedback">
-           <FeedbackOptions feedback ={this.addFeedback}/>
+           <FeedbackOptions options={this.feedbackOptions} onLeaveFeedback={this.addFeedback}/>
         </Section>
 
         <Section title="Statistics">
